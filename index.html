@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="Calculator">
+        <div id="display">
+            <p id ='dispText'> 0000</p>
+        </div>
+        <div class="firstRow">
+            <button>clear</button>
+            <button>delete</button>
+        </div>
+        <div class="secondRow">
+            <button id="7" data-key="7">7</button>
+            <button id="8" data-key="8">8</button>
+            <button id="9" data-key="9">9</button>
+            <button id="/" class="operator" data-key="/">÷</button>
+        </div>
+        <div class="thridRow">
+            <button id="4" data-key="4">4</button>
+            <button id="5" data-key="5">5</button>
+            <button id="6" data-key="6">6</button>
+            <button id="x" class="operator" data-key="x">x</button>
+        </div>
+        <div class="fourthRow">
+            <button id="1" data-key="1">1</button>
+            <button id="2" data-key="2">2</button>
+            <button id="3" data-key="3">3</button>
+            <button id="-" class="operator" data-key="-">-</button>
+        </div>
+        <div class="fifthRow">
+            <button id="." data-key=".">.</button>
+            <button id="0" data-key="0">0</button>
+            <button id="=" data-key="=">=</button>
+            <button id="+" class="operator" data-key="+">+</button>
+        </div>
+    </div>
+</body>
+</html>

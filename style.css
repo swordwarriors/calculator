@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+}
+.Calculator{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #665151;
+    width: 500px;
+    height: 500px;
+}
+button{
+    width: 70px;
+    height: 70px;
+    font-size: large;
+    align-self: center;
+    flex-grow: 1;
+    
+}
+#display{
+    background-color: #979393;
+    align-self: stretch;
+    text-align: center;
+}
