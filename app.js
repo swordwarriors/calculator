@@ -1,24 +1,24 @@
 function add(num1,num2){
-    num1 = parseInt(num1)
-    num2 = parseInt(num2)
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
     return num1 + num2
 }
 
 function subtract(num1,num2){
-    num1 = parseInt(num1)
-    num2 = parseInt(num2)
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
     return num1 - num2
 }
 
 
 function multiply(num1,num2){
-    num1 = parseInt(num1)
-    num2 = parseInt(num2)
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
     return num1 * num2
 }
 function divide(num1,num2){
-    num1 = parseInt(num1)
-    num2 = parseInt(num2)
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
     if(num2 ===0){
      display("do not break my calculator!!!!!")
      
@@ -179,8 +179,8 @@ buttons.forEach((button) => {
 //to delete later fo debugging puproses
 // a = prompt('enter first number')
 // b = prompt('enter second number')
-// a = parseInt(a)
-// b = parseInt(b)
+// a = parseFloat(a)
+// b = parseFloat(b)
 // console.log(add(a,b))
 // console.log(multiply(a,b))
 // console.log(subtract(a,b))
