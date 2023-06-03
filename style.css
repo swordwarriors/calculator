@@ -18,6 +18,7 @@ h1{
     width: 400px;
     height: 500px;
     flex-wrap: wrap;
+    border: 2px solid black;
 }
 .firstRow{
     display: flex;
@@ -47,4 +48,7 @@ button{
     border: 2px solid black;
     width: 80%;
     margin-bottom: 10px;
+}
+.operator{
+    background-color: #97566f;
 }
