@@ -119,13 +119,18 @@ buttons.forEach((button) => {
 
 
     
-    if(operator ===undefined || firstNum ===undefined || secondNum===undefined ){
 
-    }
     if(operationAssigned && (button.id === '+' || button.id === '-' || button.id === 'x' || button.id === '/' )){ 
         //when the user clicks plus for the second time i want to do the first operation
         //then i want store the second operation
         //afterwards i want to clear the second number to use it for new variable
+        if(operator ===undefined || firstNum ===undefined || secondNum===undefined ){
+            
+            
+            return;
+        }
+
+
         dispValue = operate(firstNum,operator,secondNum)
         operator = button.id;
         firstNum = dispValue
@@ -137,6 +142,10 @@ buttons.forEach((button) => {
     if(button.id === '='){
         //when the user chooses to operate i want to display the result
         //after displaying the result i want to store it in the firstNum and continue operating as usual
+        if(operator ===undefined || firstNum ===undefined || secondNum===undefined ){
+            return;
+        }
+
         dispValue = operate(firstNum,operator,secondNum)
         display(dispValue)
         operator = undefined;
