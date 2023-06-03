@@ -19,6 +19,10 @@ function multiply(num1,num2){
 function divide(num1,num2){
     num1 = parseInt(num1)
     num2 = parseInt(num2)
+    if(num2 ===0){
+     display("do not break my calculator!!!!!")
+     
+    }
     return num1 / num2
 }
 
@@ -40,7 +44,30 @@ function operate(num1,operator,num2){
     }
 }
 function display(num){
-    document.getElementById("dispText").innerHTML = num;
+    if((1/0) ===num){
+        document.getElementById("dispText").innerHTML = "don't break my calculator!!!";    
+    }else{
+    document.getElementById("dispText").innerHTML = num;}
+}
+function continueOps(){
+    
+}
+function reset(){
+    firstNum=dispValue
+    secondNum =""
+    operator = undefined
+    operationAssigned = false
+}
+function clear(){
+    firstNum=""
+    secondNum =""
+    operator = undefined
+    operationAssigned = false
+    dispValue = 0
+    display(dispValue)
+}
+function deleteDigit(){
+
 }
 
 //might delete if i was not able to make it work
@@ -68,6 +95,7 @@ let firstNum ="";
 let secondNum = "";
 let operator;
 let dispValue;
+let operationAssigned=false;
 //i want to display the value when the user clicks a button
 //i want to first identify which button was pressed
 //after identifying it get the number from the key
@@ -80,13 +108,46 @@ buttons.forEach((button) => {
 
   // and for each one we add a 'click' listener
   button.addEventListener('click',()=>{
+
+    //if the clear button is cleared call function clear
+    if(button.id ==='clear'){
+        clear()
+        return;
+    }
+
+
+
+
+    
+    if(operator ===undefined || firstNum ===undefined || secondNum===undefined ){
+
+    }
+    if(operationAssigned && (button.id === '+' || button.id === '-' || button.id === 'x' || button.id === '/' )){ 
+        //when the user clicks plus for the second time i want to do the first operation
+        //then i want store the second operation
+        //afterwards i want to clear the second number to use it for new variable
+        dispValue = operate(firstNum,operator,secondNum)
+        operator = button.id;
+        firstNum = dispValue
+        secondNum = ""
+        display(dispValue)
+        
+        return;
+    }
     if(button.id === '='){
+        //when the user chooses to operate i want to display the result
+        //after displaying the result i want to store it in the firstNum and continue operating as usual
         dispValue = operate(firstNum,operator,secondNum)
         display(dispValue)
+        operator = undefined;
+        operationAssigned =false
+        firstNum = dispValue
+        secondNum = ""
         return;
     }
     if(button.id === '+' || button.id === '-' || button.id === 'x' || button.id === '/' ){
         operator = button.id
+        operationAssigned = true
         console.log("this is the operator: " + operator)
         return;
     }
@@ -100,11 +161,19 @@ buttons.forEach((button) => {
     console.log("this is the second num: "+ secondNum)
     return;
   })
+
+
+
+
+
+
+
+
 });
 
 
 
-
+//i could have done a query selector for class operator but i forgot, might have to rewrite it to make it work
 
 
 //to delete later fo debugging puproses
